@@ -15,8 +15,8 @@ async function run(url) {
   while (currentValue < process.env.MAX_COUNT) {
     const { data } = await axios.get(url);
 
-    var parser = new DOMParser();
-    var svgDoc = parser.parseFromString(data, 'image/svg+xml');
+    const parser = new DOMParser();
+    const svgDoc = parser.parseFromString(data, 'image/svg+xml');
     const tspans = svgDoc.getElementsByTagName('tspan');
 
     let value = '';
