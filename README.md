@@ -11,7 +11,7 @@ Make sure you have Node.js installed on your system before proceeding
 1. Clone the repository to your local environment
 
    ```bash
-   git clone https://github.com/erickgcastro/spam-gitHub-view-counter.git
+   git clone https://github.com/erickgcastro/github-profile-views-booster.git
    ```
 
 2. Install dependencies using npm or yarn
