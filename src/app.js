@@ -1,10 +1,18 @@
 require('dotenv').config();
 const axios = require('axios');
 const { DOMParser } = require('xmldom');
+const z = require('zod');
+
+const envSchema = z.object({
+  SVG_URL: z.string(),
+  MAX_COUNT: z.string().refine((value) => +value),
+});
 
 async function run(url) {
+  envSchema.parse(process.env);
+
   let currentValue = 0;
-  while (currentValue < 920463) {
+  while (currentValue < process.env.MAX_COUNT) {
     const { data } = await axios.get(url);
 
     var parser = new DOMParser();
